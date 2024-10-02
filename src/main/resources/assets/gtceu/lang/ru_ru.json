@@ -7493,5 +7493,15 @@
     "material.gtceu.hydrogen_iodide": "Йодид водорода",
     "metaarmor.nms.boosted_jump.enabled": "NanoMuscle™ Suite: Прыгучесть включена",
     "recipe.condition.adjacent_block.tooltip": "Блоки вокруг",
-    "metaarmor.nms.boosted_jump.disabled": "NanoMuscle™ Suite: Прыгучесть выключена"
+    "metaarmor.nms.boosted_jump.disabled": "NanoMuscle™ Suite: Прыгучесть выключена",
+    "gtceu.multiblock.output_line.0": "%s x §e%s§r (%ss/ea)",
+    "gtceu.multiblock.output_line.1": "%s x §e%s§r (%s/s)",
+    "gtceu.multiblock.output_line.2": "%s ≈ §e%s§r (%ss/ea)",
+    "gtceu.multiblock.output_line.3": "%s ≈ §e%s§r (%s/s)",
+    "behavior.portable_scanner.guild_name": "§2Название Гильдии: %s§r",
+    "behavior.portable_scanner.machine_ownership": "§2Тип владельца машины: %s§r",
+    "behavior.portable_scanner.player_name": "§2Имя игрока: %s§r, §7Игрок онлайн: %s§r",
+    "behavior.portable_scanner.team_name": "§2Название команды: %s§r",
+    "config.gtceu.option.machineOwnerBreak": "machineOwnerBreak",
+    "config.gtceu.option.machineOwnerGUI": "machineOwnerGUI"
 }
