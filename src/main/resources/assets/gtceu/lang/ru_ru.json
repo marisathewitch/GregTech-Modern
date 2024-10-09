@@ -7503,5 +7503,6 @@
     "behavior.portable_scanner.player_name": "§2Имя игрока: %s§r, §7Игрок онлайн: %s§r",
     "behavior.portable_scanner.team_name": "§2Название команды: %s§r",
     "config.gtceu.option.machineOwnerBreak": "machineOwnerBreak",
-    "config.gtceu.option.machineOwnerGUI": "machineOwnerGUI"
+    "config.gtceu.option.machineOwnerGUI": "machineOwnerGUI",
+    "behaviour.lighter.tooltip.description": "Может поджечь предметы"
 }
