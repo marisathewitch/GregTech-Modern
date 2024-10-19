@@ -73,7 +73,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ inputs.tag-name }}
-          files: ./!(*-@(dev|dev-all|dev-slim|javadoc)).jar
+          files: ./*.jar
           fail_on_unmatched_files: true
 
   publish-cf-modrinth:
@@ -99,7 +99,9 @@ jobs:
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           curseforge-id: 890405
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
-          files: ./*.jar
+          files: |
+            ./gtceu-${{ env.MC_VERSION }}-${{ needs.build.outputs.ver }}.jar
+            ./!(gtceu-${{ env.MC_VERSION }}-${{ needs.build.outputs.ver }}.jar)
           name: 'GregTechCEu ${{ env.MC_VERSION }}-${{ needs.build.outputs.ver }}'
           version: 'mc${{ env.MC_VERSION }}-${{ needs.build.outputs.ver }}'
           version-type: beta
