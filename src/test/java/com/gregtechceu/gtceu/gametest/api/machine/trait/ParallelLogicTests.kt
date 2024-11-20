@@ -23,8 +23,8 @@ object ParallelLogicTests {
 
     private const val DELAY = 35L
 
-    @GameTest(template = "lcr", setupTicks = DELAY)
     @JvmStatic
+    @GameTest(template = "lcr", setupTicks = DELAY)
     fun `Max Ratio by Input Item`(helper: GameTestHelper) {
         val maxLimit = 4
         val (machine, input, _) = getMultiblock(helper)!!
@@ -56,8 +56,8 @@ object ParallelLogicTests {
         helper.succeed()
     }
 
-    @GameTest(template = "lcr", setupTicks = DELAY)
     @JvmStatic
+    @GameTest(template = "lcr", setupTicks = DELAY)
     fun `Max Ratio by Input Fluid`(helper: GameTestHelper) {
         val limit = 4
         val (machine, input, _) = getMultiblock(helper)!!
@@ -88,8 +88,8 @@ object ParallelLogicTests {
         helper.succeed()
     }
 
-    @GameTest(template = "lcr", setupTicks = DELAY)
     @JvmStatic
+    @GameTest(template = "lcr", setupTicks = DELAY)
     fun `Parallel Limit by Output Item`(helper: GameTestHelper) {
         val maxLimit = 8
         val (machine, input, output) = getMultiblock(helper)!!
@@ -174,8 +174,8 @@ object ParallelLogicTests {
         helper.succeed()
     }
 
-    @GameTest(template = "lcr", setupTicks = DELAY)
     @JvmStatic
+    @GameTest(template = "lcr", setupTicks = DELAY)
     fun `Max Ratio by NC Input Item`(helper: GameTestHelper) {
         val limit = 4
         val (machine, input, _) = getMultiblock(helper)!!
@@ -264,8 +264,8 @@ object ParallelLogicTests {
         helper.succeed()
     }
 
-    @GameTest(template = "lcr", setupTicks = DELAY)
     @JvmStatic
+    @GameTest(template = "lcr", setupTicks = DELAY)
     fun `Max Ratio by NC Input Fluid`(helper: GameTestHelper) {
         val limit = 4
         val (machine, input, _) = getMultiblock(helper)!!
