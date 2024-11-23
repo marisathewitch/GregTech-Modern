@@ -1,4 +1,4 @@
-package com.gregtechceu.gtceu.gametest.api.machine.trait
+package com.gregtechceu.gtceu.gametest.api.recipe.modifier
 
 import com.gregtechceu.gtceu.GTCEu
 import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability
@@ -25,8 +25,8 @@ object ParallelLogicTests {
 
     @JvmStatic
     @GameTest(template = "lcr", setupTicks = DELAY)
-    fun `Max Ratio by Input Item`(helper: GameTestHelper) {
-        val maxLimit = 4
+    fun `Max Multiplier by Input Item`(helper: GameTestHelper) {
+        val limit = 4
         val (machine, input, _) = getMultiblock(helper)!!
         input.inventory.insertItem(0, ItemStack(Blocks.COBBLESTONE, 3), false)
         input.tank.fill(Acetone.getFluid(8000), FluidAction.EXECUTE)
@@ -39,7 +39,7 @@ object ParallelLogicTests {
             .EUt(30)
             .duration(100)
             .buildRawRecipe()
-        var ratio = ItemRecipeCapability.CAP.getMaxParallelRatio(machine, recipe1, maxLimit)
+        var ratio = ParallelLogic.getMaxRecipeMultiplier(recipe1, machine, limit)
         helper.assertTrue(ratio == 3, "wrong mult buddy A: %d".format(ratio))
 
         // Recipe should be limited to 0 based on inputs
@@ -50,7 +50,7 @@ object ParallelLogicTests {
             .EUt(30)
             .duration(100)
             .buildRawRecipe()
-        ratio = ItemRecipeCapability.CAP.getMaxParallelRatio(machine, recipe2, maxLimit)
+        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe2, machine, limit)
         helper.assertTrue(ratio == 0, "wrong mult buddy B: %d".format(ratio))
 
         helper.succeed()
@@ -58,7 +58,7 @@ object ParallelLogicTests {
 
     @JvmStatic
     @GameTest(template = "lcr", setupTicks = DELAY)
-    fun `Max Ratio by Input Fluid`(helper: GameTestHelper) {
+    fun `Max Multiplier by Input Fluid`(helper: GameTestHelper) {
         val limit = 4
         val (machine, input, _) = getMultiblock(helper)!!
         input.inventory.insertItem(0, ItemStack(Blocks.COBBLESTONE, 16), false)
@@ -72,7 +72,7 @@ object ParallelLogicTests {
             .EUt(30)
             .duration(100)
             .buildRawRecipe()
-        var ratio = FluidRecipeCapability.CAP.getMaxParallelRatio(machine, recipe1, limit)
+        var ratio = ParallelLogic.getMaxRecipeMultiplier(recipe1, machine, limit)
         helper.assertTrue(ratio == 2, "wrong mult buddy A: %d".format(ratio))
 
         // Recipe should be limited to 0 based on inputs
@@ -82,7 +82,7 @@ object ParallelLogicTests {
             .outputItems(ItemStack(Blocks.STONE)).EUt(30)
             .duration(100)
             .buildRawRecipe()
-        ratio = FluidRecipeCapability.CAP.getMaxParallelRatio(machine, recipe2, limit)
+        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe2, machine, limit)
         helper.assertTrue(ratio == 0, "wrong mult buddy B: %d".format(ratio))
 
         helper.succeed()
