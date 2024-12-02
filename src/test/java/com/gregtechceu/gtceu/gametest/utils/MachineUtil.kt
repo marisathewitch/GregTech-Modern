@@ -33,6 +33,9 @@ fun getMultiblock(helper: GameTestHelper, pos: BlockPos): MultiblockData? {
         helper.fail("not multiblock machine", pos)
         return null
     }
+
+    if (!controllerMM.isFormed) helper.fail("multiblock not formed", pos)
+
     return MultiblockData(
         controllerMM,
         input.metaMachine as DualHatchPartMachine,

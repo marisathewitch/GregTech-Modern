@@ -1,4 +1,4 @@
-package com.gregtechceu.gtceu.gametest.api.machine.trait;
+package com.gregtechceu.gtceu.api.machine.trait;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.core.mixins.RecipeManagerAccessor;

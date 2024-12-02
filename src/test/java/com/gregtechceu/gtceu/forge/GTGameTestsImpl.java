@@ -1,4 +1,4 @@
-package com.gregtechceu.gtceu.gametest.forge;
+package com.gregtechceu.gtceu.forge;
 
 // @Mod.EventBusSubscriber(modid = GTCEu.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 // public class GTGameTestsImpl {
