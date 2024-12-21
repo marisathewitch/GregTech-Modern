@@ -14,7 +14,6 @@ import net.minecraftforge.gametest.PrefixGameTestTemplate
 @PrefixGameTestTemplate(false)
 @GameTestHolder(GTCEu.MOD_ID)
 object ChanceBoostFunctionTests {
-    private const val DELAY = 40L
 
     @JvmStatic
     @GameTest(template = "empty")

@@ -48,7 +48,7 @@ object ParallelLogicTests {
             .EUt(30)
             .duration(100)
             .buildRawRecipe()
-        var ratio = ParallelLogic.getMaxRecipeMultiplier(recipe1, machine, maxLimit)
+        var ratio = ParallelLogic.limitByInput(machine, recipe1, maxLimit)
         ratio.assertEquals(3)
 
         // Recipe should be limited to 0 based on inputs
@@ -59,9 +59,8 @@ object ParallelLogicTests {
             .EUt(30)
             .duration(100)
             .buildRawRecipe()
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe2, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe2, maxLimit)
         ratio.assertEquals(0)
-//        helper.assertTrue(ratio == 0, "wrong mult buddy B: %d".format(ratio))
 
         helper.succeed()
     }
@@ -84,25 +83,22 @@ object ParallelLogicTests {
 
         // 1 for NC + 0 to consume -> 0
         input.inventory.insertItem(0, ItemStack(Blocks.COBBLESTONE, 1), false)
-        var ratio = ParallelLogic.getMaxRecipeMultiplier(recipe1, machine, maxLimit)
-//        helper.assertTrue(ratio == 0, "wrong ratio buddy A: %d".format(ratio))
+        var ratio = ParallelLogic.limitByInput(machine, recipe1, maxLimit)
         ratio.assert(0)
 
         // 1 for NC + 2 to consume -> 2
         input.inventory.insertItem(0, ItemStack(Blocks.COBBLESTONE, 2), false)
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe1, machine, maxLimit)
-//        helper.assertTrue(ratio == 2, "wrong ratio buddy B: %d".format(ratio))
+        ratio = ParallelLogic.limitByInput(machine, recipe1, maxLimit)
         ratio.assert(2)
 
         // 1 for NC + 4 to consume -> 4
         input.inventory.insertItem(0, ItemStack(Blocks.COBBLESTONE, 2), false)
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe1, machine, maxLimit)
-//        helper.assertTrue(ratio == limit, "wrong ratio buddy C: %d".format(ratio))
+        ratio = ParallelLogic.limitByInput(machine, recipe1, maxLimit)
         ratio.assert(maxLimit)
 
         // 1 for NC + 6 to consume -> limited at 4
         input.inventory.insertItem(0, ItemStack(Blocks.COBBLESTONE, 2), false)
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe1, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe1, maxLimit)
         helper.assertTrue(ratio == maxLimit, "wrong ratio buddy D: %d".format(ratio))
 
         // Test with NC != other ingredient
@@ -115,12 +111,12 @@ object ParallelLogicTests {
             .buildRawRecipe()
 
         // No NC -> 0
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe2, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe2, maxLimit)
         helper.assertTrue(ratio == 0, "wrong ratio buddy E: %d".format(ratio))
 
         // NC dirt + 7 cobblestone -> limited to 4
         input.inventory.insertItem(1, ItemStack(Blocks.DIRT, 1), false)
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe2, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe2, maxLimit)
         helper.assertTrue(ratio == maxLimit, "wrong ratio buddy F: %d".format(ratio))
 
         // Test with only NC ingredient
@@ -132,7 +128,7 @@ object ParallelLogicTests {
             .buildRawRecipe()
 
         // NC cobblestone -> limited to 4
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe3, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe3, maxLimit)
         helper.assertTrue(ratio == maxLimit, "wrong ratio buddy G: %d".format(ratio))
 
         // Test with only NC ingredient with stacksize
@@ -144,17 +140,17 @@ object ParallelLogicTests {
             .buildRawRecipe()
 
         // Only 1 dirt -> limited to 0
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe4, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe4, maxLimit)
         helper.assertTrue(ratio == 0, "wrong ratio buddy H: %d".format(ratio))
 
         // Add one more dirt -> NC fulfilled -> limited to 4
         input.inventory.insertItem(1, ItemStack(Blocks.DIRT, 1), false)
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe4, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe4, maxLimit)
         helper.assertTrue(ratio == maxLimit, "wrong ratio buddy I: %d".format(ratio))
 
         // Add more dirt -> NC fulfilled -> limited to 4
         input.inventory.insertItem(1, ItemStack(Blocks.DIRT, 3), false)
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe4, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe4, maxLimit)
         helper.assertTrue(ratio == maxLimit, "wrong ratio buddy J: %d".format(ratio))
 
         helper.succeed()
@@ -176,7 +172,7 @@ object ParallelLogicTests {
             .EUt(30)
             .duration(100)
             .buildRawRecipe()
-        var ratio = ParallelLogic.getMaxRecipeMultiplier(recipe1, machine, maxLimit)
+        var ratio = ParallelLogic.limitByInput(machine, recipe1, maxLimit)
         helper.assertTrue(ratio == 2, "wrong mult buddy A: %d".format(ratio))
 
         // Recipe should be limited to 0 based on inputs
@@ -186,7 +182,7 @@ object ParallelLogicTests {
             .outputItems(ItemStack(Blocks.STONE)).EUt(30)
             .duration(100)
             .buildRawRecipe()
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe2, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe2, maxLimit)
         helper.assertTrue(ratio == 0, "wrong mult buddy B: %d".format(ratio))
 
         helper.succeed()
@@ -209,22 +205,22 @@ object ParallelLogicTests {
 
         // 1 mB NC + 499mB to consume -> 0
         input.tank.fill(Water.getFluid(500), FluidAction.EXECUTE)
-        var ratio = ParallelLogic.getMaxRecipeMultiplier(recipe1, machine, maxLimit)
+        var ratio = ParallelLogic.limitByInput(machine, recipe1, maxLimit)
         helper.assertTrue(ratio == 0, "wrong ratio buddy A: %d".format(ratio))
 
         // 1mB NC + 2000mB to consume -> 2
         input.tank.fill(Water.getFluid(1501), FluidAction.EXECUTE)
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe1, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe1, maxLimit)
         helper.assertTrue(ratio == 2, "wrong ratio buddy B: %d".format(ratio))
 
         // 1mB NC + 4000mB to consume -> 4
         input.tank.fill(Water.getFluid(2000), FluidAction.EXECUTE)
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe1, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe1, maxLimit)
         helper.assertTrue(ratio == maxLimit, "wrong ratio buddy C: %d".format(ratio))
 
         // 1mB NC + 6000mB to consume -> limited to 4
         input.tank.fill(Water.getFluid(2000), FluidAction.EXECUTE)
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe1, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe1, maxLimit)
         helper.assertTrue(ratio == maxLimit, "wrong ratio buddy D: %d".format(ratio))
 
         // Test with NC != other ingredient
@@ -237,12 +233,12 @@ object ParallelLogicTests {
             .buildRawRecipe()
 
         // No NC input
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe2, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe2, maxLimit)
         helper.assertTrue(ratio == 0, "wrong ratio buddy E: %d".format(ratio))
 
         // 1mB NC + 6000mB to consume -> limited to 4
         input.tank.fill(Acetone.getFluid(1), FluidAction.EXECUTE)
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe2, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe2, maxLimit)
         helper.assertTrue(ratio == maxLimit, "wrong ratio buddy F: %d".format(ratio))
 
         // Test with only NC ingredient
@@ -254,7 +250,7 @@ object ParallelLogicTests {
             .buildRawRecipe()
 
         // NC Acetone -> limit
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe3, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe3, maxLimit)
         helper.assertTrue(ratio == maxLimit, "wrong ratio buddy G: %d".format(ratio))
 
         // Test with only NC ingredient with stack size
@@ -266,17 +262,17 @@ object ParallelLogicTests {
             .buildRawRecipe()
 
         // 1mB NC -> 0
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe4, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe4, maxLimit)
         helper.assertTrue(ratio == 0, "wrong ratio buddy H: %d".format(ratio))
 
         // 10mB NC -> limit
         input.tank.fill(Acetone.getFluid(9), FluidAction.EXECUTE)
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe4, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe4, maxLimit)
         helper.assertTrue(ratio == maxLimit, "wrong ratio buddy I: %d".format(ratio))
 
         // 20mB NC -> limit
         input.tank.fill(Acetone.getFluid(10), FluidAction.EXECUTE)
-        ratio = ParallelLogic.getMaxRecipeMultiplier(recipe4, machine, maxLimit)
+        ratio = ParallelLogic.limitByInput(machine, recipe4, maxLimit)
         helper.assertTrue(ratio == maxLimit, "wrong ratio buddy J: %d".format(ratio))
 
         helper.succeed()
@@ -305,7 +301,7 @@ object ParallelLogicTests {
             .duration(100)
             .buildRawRecipe()
 
-        fun limitOutput() = ParallelLogic.limitByOutputMerging(recipe, machine, maxLimit, machine::canVoidRecipeOutputs)
+        fun limitOutput() = ParallelLogic.limitByOutputMerging(machine, recipe, maxLimit, machine::canVoidRecipeOutputs)
 
         var limit = limitOutput()
         helper.assertTrue(limit == maxLimit, "wrong limit buddy A: %d".format(limit))
@@ -352,7 +348,7 @@ object ParallelLogicTests {
             .duration(100)
             .buildRawRecipe()
 
-        fun limitOutput() = ParallelLogic.limitByOutputMerging(recipe, machine, maxLimit, machine::canVoidRecipeOutputs)
+        fun limitOutput() = ParallelLogic.limitByOutputMerging(machine, recipe, maxLimit, machine::canVoidRecipeOutputs)
 
         var limit = limitOutput()
         helper.assertTrue(limit == maxLimit, "wrong limit buddy A: %d".format(limit))

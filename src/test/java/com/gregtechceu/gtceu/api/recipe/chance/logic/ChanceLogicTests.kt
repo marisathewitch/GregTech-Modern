@@ -4,11 +4,13 @@ import com.gregtechceu.gtceu.GTCEu
 import com.gregtechceu.gtceu.api.recipe.chance.boost.ChanceBoostFunction
 import com.gregtechceu.gtceu.api.recipe.content.Content
 import com.gregtechceu.gtceu.gametest.utils.Asserter
-import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap
+
 import net.minecraft.gametest.framework.GameTest
 import net.minecraft.gametest.framework.GameTestHelper
 import net.minecraftforge.gametest.GameTestHolder
 import net.minecraftforge.gametest.PrefixGameTestTemplate
+
+import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap
 
 @PrefixGameTestTemplate(false)
 @GameTestHolder(GTCEu.MOD_ID)
@@ -28,7 +30,8 @@ object ChanceLogicTests {
         val entries = listOf(
             Content("a", MAX_CHANCE, MAX_CHANCE, 0, null, null),
             Content("b", MAX_CHANCE, MAX_CHANCE, 0, null, null),
-            Content("c", MAX_CHANCE, MAX_CHANCE, 0, null, null))
+            Content("c", MAX_CHANCE, MAX_CHANCE, 0, null, null),
+        )
 
         val out = logic.roll(entries, NONE, 0, 0, 1)
         asserter.assertTrue(out.isNotEmpty())
@@ -45,7 +48,8 @@ object ChanceLogicTests {
         val entries = listOf(
             Content("a", MAX_CHANCE, MAX_CHANCE, 0, null, null),
             Content("b", MAX_CHANCE, MAX_CHANCE, 0, null, null),
-            Content("c", MAX_CHANCE, MAX_CHANCE, 0, null, null))
+            Content("c", MAX_CHANCE, MAX_CHANCE, 0, null, null),
+        )
 
         val out = logic.roll(entries, NONE, 0, 0, 10)
         asserter.assertTrue(out.isNotEmpty())
@@ -66,10 +70,11 @@ object ChanceLogicTests {
         val entries = listOf(
             Content("a", 2000, MAX_CHANCE, 0, null, null), // 1/5
             Content("b", 5000, MAX_CHANCE, 0, null, null), // 1/2
-            Content("c", 8000, MAX_CHANCE, 0, null, null)) // 4/5
+            Content("c", 8000, MAX_CHANCE, 0, null, null), // 4/5
+        )
 
         val out = logic.roll(entries, NONE, 0, 0, cache, 1).toMutableList()
-        for(i in 1..9) {
+        for (i in 1..9) {
             out.addAll(logic.roll(entries, NONE, 0, 0, cache, 1))
         }
         val map = out.groupingBy { it }.eachCount()
@@ -89,9 +94,10 @@ object ChanceLogicTests {
         val entries = listOf(
             Content("a", 2000, MAX_CHANCE, 0, null, null), // 1/5
             Content("b", 5000, MAX_CHANCE, 0, null, null), // 1/2
-            Content("c", 8000, MAX_CHANCE, 0, null, null)) // 4/5
+            Content("c", 8000, MAX_CHANCE, 0, null, null), // 4/5
+        )
 
-        val out = logic.roll(entries, NONE, 0, 0, cache, 10);
+        val out = logic.roll(entries, NONE, 0, 0, cache, 10)
         val map = out.groupingBy { it }.eachCount()
         asserter.assertTrue(map.containsKey(entries[0]) && map[entries[0]] == 2)
         asserter.assertTrue(map.containsKey(entries[1]) && map[entries[1]] == 5)
@@ -108,7 +114,8 @@ object ChanceLogicTests {
         var entries = listOf(
             Content("a", MAX_CHANCE, MAX_CHANCE, 0, null, null),
             Content("b", MAX_CHANCE, MAX_CHANCE, 0, null, null),
-            Content("c", 0, MAX_CHANCE, 0, null, null))
+            Content("c", 0, MAX_CHANCE, 0, null, null),
+        )
 
         var out = logic.roll(entries, NONE, 0, 0, 1)
         asserter.assertTrue(out.isEmpty())
@@ -116,7 +123,8 @@ object ChanceLogicTests {
         entries = listOf(
             Content("a", MAX_CHANCE, MAX_CHANCE, 0, null, null),
             Content("b", MAX_CHANCE, MAX_CHANCE, 0, null, null),
-            Content("c", MAX_CHANCE, MAX_CHANCE, 0, null, null))
+            Content("c", MAX_CHANCE, MAX_CHANCE, 0, null, null),
+        )
         out = logic.roll(entries, NONE, 0, 0, 1)
         asserter.assertEquals(entries, out)
 
@@ -132,7 +140,8 @@ object ChanceLogicTests {
         val entries = listOf(
             Content("a", MAX_CHANCE, MAX_CHANCE, 0, null, null),
             Content("b", MAX_CHANCE, MAX_CHANCE, 0, null, null),
-            Content("c", MAX_CHANCE, MAX_CHANCE, 0, null, null))
+            Content("c", MAX_CHANCE, MAX_CHANCE, 0, null, null),
+        )
 
         val out = logic.roll(entries, NONE, 0, 0, 1)
         asserter.assertEquals(out.size, 1)
@@ -149,7 +158,8 @@ object ChanceLogicTests {
         val entries = listOf(
             Content("a", MAX_CHANCE, MAX_CHANCE, 0, null, null),
             Content("b", MAX_CHANCE, MAX_CHANCE, 0, null, null),
-            Content("c", MAX_CHANCE, MAX_CHANCE, 0, null, null))
+            Content("c", MAX_CHANCE, MAX_CHANCE, 0, null, null),
+        )
 
         val out = logic.roll(entries, NONE, 0, 0, 1)
         asserter.assertTrue(out.isEmpty())
@@ -163,6 +173,9 @@ object ChanceLogicTests {
         asserter.assertTrue(ChanceLogic.passesChance(MAX_CHANCE, MAX_CHANCE))
         asserter.assertTrue(ChanceLogic.passesChance(15_000, MAX_CHANCE))
         asserter.assertFalse(ChanceLogic.passesChance(5000, MAX_CHANCE))
+
+        asserter.assertEquals(10_000, ChanceLogic.getMaxChancedValue())
+
         helper.succeed()
     }
 }
