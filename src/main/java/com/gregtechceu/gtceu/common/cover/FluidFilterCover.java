@@ -29,11 +29,6 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-/**
- * @author KilaBash
- * @date 2023/3/13
- * @implNote ItemFilterCover
- */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class FluidFilterCover extends CoverBehavior implements IUICover {

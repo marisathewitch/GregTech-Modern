@@ -44,11 +44,6 @@ import java.util.stream.Collectors;
 
 import static com.gregtechceu.gtceu.api.GTValues.M;
 
-/**
- * @author KilaBash
- * @date 2023/2/22
- * @implNote ChemicalHelper
- */
 public class ChemicalHelper {
 
     /** Used for custom material data for items that do not fall into the normal "prefix, material" pair */

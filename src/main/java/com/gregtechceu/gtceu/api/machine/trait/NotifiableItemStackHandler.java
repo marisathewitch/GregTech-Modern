@@ -29,11 +29,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 import java.util.function.Function;
 
-/**
- * @author KilaBash
- * @date 2023/2/20
- * @implNote NotifiableItemStackHandler
- */
 public class NotifiableItemStackHandler extends NotifiableRecipeHandlerTrait<Ingredient>
                                         implements ICapabilityTrait, IItemHandlerModifiable {
 

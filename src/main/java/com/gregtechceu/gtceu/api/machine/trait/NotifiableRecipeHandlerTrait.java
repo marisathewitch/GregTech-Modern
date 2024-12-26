@@ -12,11 +12,6 @@ import lombok.Getter;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author KilaBash
- * @date 2023/2/27
- * @implNote NotifiableTrait
- */
 public abstract class NotifiableRecipeHandlerTrait<T> extends MachineTrait implements IRecipeHandlerTrait<T> {
 
     public static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(

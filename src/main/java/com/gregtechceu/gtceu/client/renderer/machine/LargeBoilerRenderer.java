@@ -21,11 +21,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-/**
- * @author KilaBash
- * @date 2023/3/16
- * @implNote LargeBoilerRenderer
- */
 public class LargeBoilerRenderer extends WorkableCasingMachineRenderer implements IControllerRenderer {
 
     public static final ResourceLocation BLOOM_OVERLAY = GTCEu.id("block/casings/firebox/machine_casing_firebox_bloom");

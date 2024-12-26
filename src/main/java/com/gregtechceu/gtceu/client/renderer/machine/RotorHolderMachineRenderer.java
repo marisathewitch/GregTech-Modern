@@ -23,11 +23,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.function.Consumer;
 
-/**
- * @author KilaBash
- * @date 2023/7/10
- * @implNote RotorHolderMachineRenderer
- */
 public class RotorHolderMachineRenderer extends TieredHullMachineRenderer {
 
     public static final ResourceLocation ROTOR_HOLDER_OVERLAY = GTCEu.id("block/overlay/machine/overlay_rotor_holder");

@@ -9,11 +9,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
-/**
- * @author KilaBash
- * @date 2022/11/6
- * @implNote A machine which hooks right click events.
- */
 public interface IInteractedMachine extends IMachineFeature {
 
     /**

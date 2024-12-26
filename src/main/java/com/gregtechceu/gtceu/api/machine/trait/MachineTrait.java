@@ -15,12 +15,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Predicate;
 
-/**
- * @author KilaBash
- * @date 2023/2/18
- * @implNote MachineTrait represents an abstract capability held by machine. Such as item, fluid, energy, etc.
- *           All trait should be added while MetaMachine is creating. you cannot modify it on the fly。
- */
 public abstract class MachineTrait implements IEnhancedManaged {
 
     @Getter

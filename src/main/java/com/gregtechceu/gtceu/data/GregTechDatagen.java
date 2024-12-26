@@ -6,11 +6,6 @@ import com.gregtechceu.gtceu.data.tags.TagsHandler;
 
 import com.tterrag.registrate.providers.ProviderType;
 
-/**
- * @author KilaBash
- * @date 2023/3/19
- * @implNote GregTechDatagen
- */
 public class GregTechDatagen {
 
     public static void init() {

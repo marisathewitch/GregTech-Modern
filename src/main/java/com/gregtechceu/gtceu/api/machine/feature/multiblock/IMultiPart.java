@@ -17,11 +17,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-/**
- * @author KilaBash
- * @date 2023/3/3
- * @implNote IMultiPart
- */
 public interface IMultiPart extends IMachineFeature, IFancyUIMachine {
 
     /**

@@ -24,11 +24,6 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-/**
- * @author KilaBash
- * @date 2023/3/25
- * @implNote CoilRenderer
- */
 @Getter
 public class TextureOverrideRenderer extends CTMModelRenderer {
 

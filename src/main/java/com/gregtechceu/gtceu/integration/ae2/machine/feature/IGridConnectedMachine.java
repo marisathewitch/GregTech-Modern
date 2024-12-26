@@ -9,12 +9,6 @@ import appeng.api.networking.IGridNodeListener;
 import appeng.api.util.AECableType;
 import appeng.me.helpers.IGridConnectedBlockEntity;
 
-/**
- * A machine that can connect to ME network.
- *
- * @author GateGuardian
- * @date : 2024/7/14
- */
 public interface IGridConnectedMachine extends IMachineFeature, IGridConnectedBlockEntity {
 
     int ME_UPDATE_INTERVAL = ConfigHolder.INSTANCE.compat.ae2.updateIntervals;

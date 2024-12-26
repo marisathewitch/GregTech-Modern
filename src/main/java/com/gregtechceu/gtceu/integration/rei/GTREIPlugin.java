@@ -41,11 +41,6 @@ import me.shedaniel.rei.forge.REIPluginClient;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author KilaBash
- * @date 2023/2/25
- * @implNote REIPlugin
- */
 @REIPluginClient
 public class GTREIPlugin implements REIClientPlugin {
 

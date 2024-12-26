@@ -23,11 +23,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 import java.util.function.Consumer;
 
-/**
- * @author lucifer_ll
- * @date 2023/7/13
- * @implNote ChargerRenderer
- */
 public class ChargerRenderer extends TieredHullMachineRenderer {
 
     public final static ResourceLocation CHARGER_IDLE = GTCEu.id("block/machines/charger/overlay_charger_idle");

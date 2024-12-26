@@ -21,11 +21,6 @@ import java.util.Set;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-/**
- * @author KilaBash
- * @date 2023/3/4
- * @implNote MultiblockPartMachine
- */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class MultiblockPartMachine extends MetaMachine implements IMultiPart {

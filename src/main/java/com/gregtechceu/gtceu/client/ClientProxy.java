@@ -36,11 +36,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
 
-/**
- * @author KilaBash
- * @date 2023/7/30
- * @implNote ClientProxy
- */
 public class ClientProxy extends CommonProxy {
 
     public static final BiMap<ResourceLocation, GTOreDefinition> CLIENT_ORE_VEINS = HashBiMap.create();

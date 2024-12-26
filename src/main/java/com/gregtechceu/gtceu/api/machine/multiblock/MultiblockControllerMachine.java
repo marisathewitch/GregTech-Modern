@@ -41,11 +41,6 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-/**
- * @author KilaBash
- * @date 2023/3/3
- * @implNote MultiblockControllerMachine
- */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class MultiblockControllerMachine extends MetaMachine implements IMultiController {

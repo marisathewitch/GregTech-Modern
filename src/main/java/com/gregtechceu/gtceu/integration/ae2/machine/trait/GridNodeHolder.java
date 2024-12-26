@@ -21,13 +21,6 @@ import lombok.Getter;
 
 import java.util.EnumSet;
 
-/**
- * A MachineTrait that is only used for hosting grid node and does not provide grid node capability.
- * Because IGridConnectedMachine has already extended IInWorldGridNodeHost.
- *
- * @author GateGuardian
- * @date : 2024/7/14
- */
 public class GridNodeHolder extends MachineTrait {
 
     protected final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(GridNodeHolder.class);

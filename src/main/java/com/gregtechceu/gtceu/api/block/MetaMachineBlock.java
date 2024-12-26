@@ -55,11 +55,6 @@ import java.util.Set;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-/**
- * @author KilaBash
- * @date 2023/2/17
- * @implNote GTBlock
- */
 @SuppressWarnings("deprecation")
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault

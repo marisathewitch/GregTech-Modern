@@ -35,12 +35,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.*;
 
-/**
- * @author KilaBash
- * @date 2023/2/18
- * @implNote MachineDefinition
- *           Representing basic information of a machine.
- */
 public class MachineDefinition implements Supplier<IMachineBlock> {
 
     @Getter

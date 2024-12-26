@@ -31,11 +31,6 @@ import java.util.List;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-/**
- * @author KilaBash
- * @date 2023/2/14
- * @implNote MaterialItem
- */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class TagPrefixItem extends Item {

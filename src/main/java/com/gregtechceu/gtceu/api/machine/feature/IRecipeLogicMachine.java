@@ -11,12 +11,6 @@ import com.gregtechceu.gtceu.config.ConfigHolder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * @author KilaBash
- * @date 2023/2/20
- * @implNote IRecipeMachine
- *           A machine can handle recipes.
- */
 public interface IRecipeLogicMachine extends IRecipeCapabilityHolder, IMachineFeature, IWorkable, ICleanroomReceiver,
                                      IVoidable {
 

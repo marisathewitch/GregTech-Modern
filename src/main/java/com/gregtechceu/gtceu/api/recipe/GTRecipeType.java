@@ -45,11 +45,6 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-/**
- * @author KilaBash
- * @date 2023/2/20
- * @implNote GTRecipeType
- */
 @Accessors(chain = true)
 public class GTRecipeType implements RecipeType<GTRecipe> {
 

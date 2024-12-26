@@ -14,11 +14,6 @@ import static com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper.registerUni
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
-/**
- * @author KilaBash
- * @date 2023/2/28
- * @implNote ItemTagsHandler
- */
 public class TagsHandler {
 
     public static void initItem(RegistrateTagsProvider<Item> provider) {

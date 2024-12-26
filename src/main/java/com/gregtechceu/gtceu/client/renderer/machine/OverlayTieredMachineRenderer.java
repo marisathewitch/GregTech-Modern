@@ -22,11 +22,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-/**
- * @author KilaBash
- * @date 2023/3/4
- * @implNote PartRenderer
- */
 public class OverlayTieredMachineRenderer extends TieredHullMachineRenderer implements IPartRenderer {
 
     protected IModelRenderer overlayModel;

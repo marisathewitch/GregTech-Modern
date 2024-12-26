@@ -31,11 +31,6 @@ import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-/**
- * @author KilaBash
- * @date 2023/2/21
- * @implNote VanillaRecipeHelper
- */
 public class VanillaRecipeHelper {
 
     public static void addSmeltingRecipe(Consumer<FinishedRecipe> provider, @NotNull String regName, TagKey<Item> input,

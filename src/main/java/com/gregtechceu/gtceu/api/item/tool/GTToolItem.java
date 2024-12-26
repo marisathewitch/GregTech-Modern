@@ -37,11 +37,6 @@ import java.util.List;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-/**
- * @author KilaBash
- * @date 2023/2/23
- * @implNote GTToolItem
- */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class GTToolItem extends DiggerItem implements IGTTool {

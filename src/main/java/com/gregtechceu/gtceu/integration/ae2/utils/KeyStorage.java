@@ -19,13 +19,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
 
-/**
- * Used to store {@link appeng.api.stacks.GenericStack } in a way that associates key and amount.
- * Provides methods for serialization and deserialization.
- *
- * @author GateGuardian
- * @date : 2024/7/18
- */
 @MethodsReturnNonnullByDefault
 public class KeyStorage implements ITagSerializable<ListTag>, IContentChangeAware,
                         Iterable<Object2LongMap.Entry<AEKey>> {

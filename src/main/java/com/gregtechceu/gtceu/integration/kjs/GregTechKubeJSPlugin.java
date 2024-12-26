@@ -99,11 +99,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-/**
- * @author KilaBash
- * @date 2023/3/26
- * @implNote GregTechKubeJSPlugin
- */
 public class GregTechKubeJSPlugin extends KubeJSPlugin {
 
     @Override

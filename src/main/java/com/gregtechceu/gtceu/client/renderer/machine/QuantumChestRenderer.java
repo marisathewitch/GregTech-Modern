@@ -31,11 +31,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.Tesselator;
 import org.joml.Quaternionf;
 
-/**
- * @author KilaBash
- * @date 2023/3/2
- * @implNote QuantumChestRenderer
- */
 public class QuantumChestRenderer extends TieredHullMachineRenderer {
 
     private static Item CREATIVE_CHEST_ITEM = null;

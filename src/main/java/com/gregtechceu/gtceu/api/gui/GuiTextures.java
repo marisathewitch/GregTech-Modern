@@ -5,11 +5,6 @@ import com.lowdragmc.lowdraglib.gui.texture.ResourceTexture;
 
 import lombok.val;
 
-/**
- * @author KilaBash
- * @date 2023/2/22
- * @implNote GuiTextures
- */
 @SuppressWarnings("unused")
 public class GuiTextures {
 

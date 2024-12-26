@@ -13,11 +13,6 @@ import lombok.experimental.Accessors;
 
 import java.util.function.BooleanSupplier;
 
-/**
- * @author KilaBash
- * @date 2023/2/22
- * @implNote ToggleButtonWidget
- */
 @Accessors(chain = true)
 public class ToggleButtonWidget extends SwitchWidget {
 

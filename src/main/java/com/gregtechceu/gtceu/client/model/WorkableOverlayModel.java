@@ -37,11 +37,6 @@ import java.util.function.Consumer;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-/**
- * @author KilaBash
- * @date 2023/2/20
- * @implNote WorkableOverlayModel
- */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class WorkableOverlayModel {

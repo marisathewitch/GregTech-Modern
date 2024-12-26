@@ -34,11 +34,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.Tesselator;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
-/**
- * @author KilaBash
- * @date 2023/3/2
- * @implNote QuantumChestRenderer
- */
 public class QuantumTankRenderer extends TieredHullMachineRenderer {
 
     private static final float MIN = 0.16f;

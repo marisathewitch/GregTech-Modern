@@ -10,11 +10,6 @@ import com.gregtechceu.gtceu.config.ConfigHolder;
 
 import net.minecraft.server.level.ServerLevel;
 
-/**
- * @author screret
- * @date 2024/6/8
- * @apiNote common interface for environmental hazard (e.g. pollution) emitters like mufflers.
- */
 public interface IEnvironmentalHazardEmitter extends IMachineFeature {
 
     /**
