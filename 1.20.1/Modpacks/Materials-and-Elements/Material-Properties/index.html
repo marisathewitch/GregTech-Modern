@@ -4389,7 +4389,7 @@
 <h2 id="blast-furnace-properties"><code>Blast Furnace Properties</code></h2>
 <ul>
 <li><code>.blastTemp()</code> is meant to be paired together with <code>.ingot()</code>. Will generate a EBF recipe (and an ABS recipe) based on the parameters you give it:<ol>
-<li><code>int temperature</code> -&gt; dictates what coil tier it will require (check the coil tooltips for their max temperature).
+<li><code>int temperature</code> -&gt; dictates what coil tier it will require (check the coil tooltips for their max temperature, or visit <a href="../../Other-Topics/Custom-Coils/#standard-coils">Standard Coils</a>).
     If the temperature is below 1000, it will also generate a PBF recipe.
     If temperature is above 1750, a hot ingot will be generated, this requiring a Vacuum Freezer.</li>
 <li>(optional) <code>string gasTier</code> -&gt; can be <code>null</code> for none, <code>'low'</code> for nitrogen, <code>'mid'</code> for helium, <code>'high'</code> for argon, <code>'higher'</code> for neon or <code>'highest'</code> for krypton.</li>
