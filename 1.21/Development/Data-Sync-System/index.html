@@ -8,31 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://gregtechceu.github.io/GregTech-Modern/1.21/Development/SyncData/Annotations/Persisted/">
+        <link rel="canonical" href="https://gregtechceu.github.io/GregTech-Modern/1.21/Development/Data-Sync-System/">
       
       
-        <link rel="prev" href="../../Using-SyncData/">
+        <link rel="prev" href="../General-Topics/Tick-Updates/">
       
       
-        <link rel="next" href="../DescSynced/">
+        <link rel="next" href="Annotations/">
       
       
         
       
       
-      <link rel="icon" href="../../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>@Persisted - GregTech Modern Docs</title>
+        <title>Data Sync/Save system  - GregTech Modern Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,9 +51,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-persisted" class="md-skip">
+        <a href="#data-syncsave-system" class="md-skip">
           Skip to content
         </a>
       
@@ -98,9 +98,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="GregTech Modern Docs" class="md-header__button md-logo" aria-label="GregTech Modern Docs" data-md-component="logo">
+    <a href="../.." title="GregTech Modern Docs" class="md-header__button md-logo" aria-label="GregTech Modern Docs" data-md-component="logo">
       
-  <img src="../../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              @Persisted
+              Data Sync/Save system 
             
           </span>
         </div>
@@ -222,7 +222,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -243,7 +243,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../Gameplay/" class="md-tabs__link">
+        <a href="../../Gameplay/" class="md-tabs__link">
           
   
   
@@ -265,7 +265,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../Modpacks/" class="md-tabs__link">
+        <a href="../../Modpacks/" class="md-tabs__link">
           
   
   
@@ -289,7 +289,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -331,9 +331,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="GregTech Modern Docs" class="md-nav__button md-logo" aria-label="GregTech Modern Docs" data-md-component="logo">
+    <a href="../.." title="GregTech Modern Docs" class="md-nav__button md-logo" aria-label="GregTech Modern Docs" data-md-component="logo">
       
-  <img src="../../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     GregTech Modern Docs
@@ -360,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -420,7 +420,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Gameplay/" class="md-nav__link ">
+            <a href="../../Gameplay/" class="md-nav__link ">
               
   
   
@@ -464,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Gameplay/Central-Monitor/" class="md-nav__link">
+      <a href="../../Gameplay/Central-Monitor/" class="md-nav__link">
         
   
   
@@ -492,7 +492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Gameplay/Ore-Generation/" class="md-nav__link">
+      <a href="../../Gameplay/Ore-Generation/" class="md-nav__link">
         
   
   
@@ -551,7 +551,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Gameplay/Electricity/" class="md-nav__link ">
+            <a href="../../Gameplay/Electricity/" class="md-nav__link ">
               
   
   
@@ -595,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Gameplay/Electricity/Cables-and-Transformers/" class="md-nav__link">
+      <a href="../../Gameplay/Electricity/Cables-and-Transformers/" class="md-nav__link">
         
   
   
@@ -623,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Gameplay/Electricity/Energy-Storage/" class="md-nav__link">
+      <a href="../../Gameplay/Electricity/Energy-Storage/" class="md-nav__link">
         
   
   
@@ -651,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Gameplay/Electricity/Generators/" class="md-nav__link">
+      <a href="../../Gameplay/Electricity/Generators/" class="md-nav__link">
         
   
   
@@ -679,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Gameplay/Electricity/Machines/" class="md-nav__link">
+      <a href="../../Gameplay/Electricity/Machines/" class="md-nav__link">
         
   
   
@@ -744,7 +744,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Gameplay/Logistics/" class="md-nav__link ">
+            <a href="../../Gameplay/Logistics/" class="md-nav__link ">
               
   
   
@@ -788,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Gameplay/Logistics/Covers/" class="md-nav__link">
+      <a href="../../Gameplay/Logistics/Covers/" class="md-nav__link">
         
   
   
@@ -816,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Gameplay/Logistics/Machines/" class="md-nav__link">
+      <a href="../../Gameplay/Logistics/Machines/" class="md-nav__link">
         
   
   
@@ -844,7 +844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Gameplay/Logistics/Pipes/" class="md-nav__link">
+      <a href="../../Gameplay/Logistics/Pipes/" class="md-nav__link">
         
   
   
@@ -909,7 +909,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Gameplay/Steam/" class="md-nav__link ">
+            <a href="../../Gameplay/Steam/" class="md-nav__link ">
               
   
   
@@ -953,7 +953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Gameplay/Steam/Bronze/" class="md-nav__link">
+      <a href="../../Gameplay/Steam/Bronze/" class="md-nav__link">
         
   
   
@@ -981,7 +981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Gameplay/Steam/Steam-Generation/" class="md-nav__link">
+      <a href="../../Gameplay/Steam/Steam-Generation/" class="md-nav__link">
         
   
   
@@ -1009,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Gameplay/Steam/Steam-Usage/" class="md-nav__link">
+      <a href="../../Gameplay/Steam/Steam-Usage/" class="md-nav__link">
         
   
   
@@ -1089,7 +1089,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Modpacks/" class="md-nav__link ">
+            <a href="../../Modpacks/" class="md-nav__link ">
               
   
   
@@ -1133,7 +1133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Beyond-The-Docs/" class="md-nav__link">
+      <a href="../../Modpacks/Beyond-The-Docs/" class="md-nav__link">
         
   
   
@@ -1202,7 +1202,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Modpacks/Materials-and-Elements/" class="md-nav__link ">
+            <a href="../../Modpacks/Materials-and-Elements/" class="md-nav__link ">
               
   
   
@@ -1246,7 +1246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Materials-and-Elements/01-Material-Creation/" class="md-nav__link">
+      <a href="../../Modpacks/Materials-and-Elements/01-Material-Creation/" class="md-nav__link">
         
   
   
@@ -1274,7 +1274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Materials-and-Elements/02-Element-Creation/" class="md-nav__link">
+      <a href="../../Modpacks/Materials-and-Elements/02-Element-Creation/" class="md-nav__link">
         
   
   
@@ -1302,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Materials-and-Elements/Material-Flags/" class="md-nav__link">
+      <a href="../../Modpacks/Materials-and-Elements/Material-Flags/" class="md-nav__link">
         
   
   
@@ -1330,7 +1330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Materials-and-Elements/Material-Icon-Sets/" class="md-nav__link">
+      <a href="../../Modpacks/Materials-and-Elements/Material-Icon-Sets/" class="md-nav__link">
         
   
   
@@ -1358,7 +1358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Materials-and-Elements/Material-Properties/" class="md-nav__link">
+      <a href="../../Modpacks/Materials-and-Elements/Material-Properties/" class="md-nav__link">
         
   
   
@@ -1386,7 +1386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Materials-and-Elements/Modifying-Existing-Materials/" class="md-nav__link">
+      <a href="../../Modpacks/Materials-and-Elements/Modifying-Existing-Materials/" class="md-nav__link">
         
   
   
@@ -1414,7 +1414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Materials-and-Elements/TagPrefixes-and-the-power-of-.setIgnored%28%29/" class="md-nav__link">
+      <a href="../../Modpacks/Materials-and-Elements/TagPrefixes-and-the-power-of-.setIgnored%28%29/" class="md-nav__link">
         
   
   
@@ -1442,7 +1442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Materials-and-Elements/The-ChemicalHelper-class/" class="md-nav__link">
+      <a href="../../Modpacks/Materials-and-Elements/The-ChemicalHelper-class/" class="md-nav__link">
         
   
   
@@ -1470,7 +1470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Materials-and-Elements/Tool-Creation/" class="md-nav__link">
+      <a href="../../Modpacks/Materials-and-Elements/Tool-Creation/" class="md-nav__link">
         
   
   
@@ -1541,7 +1541,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Modpacks/Ore-Generation/" class="md-nav__link ">
+            <a href="../../Modpacks/Ore-Generation/" class="md-nav__link ">
               
   
   
@@ -1585,7 +1585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Ore-Generation/01-Customizing-Veins/" class="md-nav__link">
+      <a href="../../Modpacks/Ore-Generation/01-Customizing-Veins/" class="md-nav__link">
         
   
   
@@ -1613,7 +1613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Ore-Generation/02-Generators/" class="md-nav__link">
+      <a href="../../Modpacks/Ore-Generation/02-Generators/" class="md-nav__link">
         
   
   
@@ -1641,7 +1641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Ore-Generation/03-Adding-Stone-Types/" class="md-nav__link">
+      <a href="../../Modpacks/Ore-Generation/03-Adding-Stone-Types/" class="md-nav__link">
         
   
   
@@ -1669,7 +1669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Ore-Generation/04-Layers-and-Dimensions/" class="md-nav__link">
+      <a href="../../Modpacks/Ore-Generation/04-Layers-and-Dimensions/" class="md-nav__link">
         
   
   
@@ -1697,7 +1697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Ore-Generation/Bedrock-Fluid-Veins/" class="md-nav__link">
+      <a href="../../Modpacks/Ore-Generation/Bedrock-Fluid-Veins/" class="md-nav__link">
         
   
   
@@ -1725,7 +1725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Ore-Generation/Bedrock-Ore-Veins/" class="md-nav__link">
+      <a href="../../Modpacks/Ore-Generation/Bedrock-Ore-Veins/" class="md-nav__link">
         
   
   
@@ -1829,7 +1829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Recipes/Adding-and-Removing-Recipes/" class="md-nav__link">
+      <a href="../../Modpacks/Recipes/Adding-and-Removing-Recipes/" class="md-nav__link">
         
   
   
@@ -1857,7 +1857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Recipes/Crafting-Components/" class="md-nav__link">
+      <a href="../../Modpacks/Recipes/Crafting-Components/" class="md-nav__link">
         
   
   
@@ -1885,7 +1885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Recipes/Custom-Recipe-Modifiers/" class="md-nav__link">
+      <a href="../../Modpacks/Recipes/Custom-Recipe-Modifiers/" class="md-nav__link">
         
   
   
@@ -1913,7 +1913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Recipes/Material-Entries/" class="md-nav__link">
+      <a href="../../Modpacks/Recipes/Material-Entries/" class="md-nav__link">
         
   
   
@@ -1941,7 +1941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Recipes/Recipe-Conditions/" class="md-nav__link">
+      <a href="../../Modpacks/Recipes/Recipe-Conditions/" class="md-nav__link">
         
   
   
@@ -1969,7 +1969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Recipes/TagPrefixRecipeGeneration/" class="md-nav__link">
+      <a href="../../Modpacks/Recipes/TagPrefixRecipeGeneration/" class="md-nav__link">
         
   
   
@@ -2022,7 +2022,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Modpacks/Recipes/Ingredients/" class="md-nav__link ">
+            <a href="../../Modpacks/Recipes/Ingredients/" class="md-nav__link ">
               
   
   
@@ -2066,7 +2066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Recipes/Ingredients/NBT-Predicate-Ingredients/" class="md-nav__link">
+      <a href="../../Modpacks/Recipes/Ingredients/NBT-Predicate-Ingredients/" class="md-nav__link">
         
   
   
@@ -2155,7 +2155,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Modpacks/Other-Topics/" class="md-nav__link ">
+            <a href="../../Modpacks/Other-Topics/" class="md-nav__link ">
               
   
   
@@ -2199,7 +2199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Other-Topics/Active-Blocks/" class="md-nav__link">
+      <a href="../../Modpacks/Other-Topics/Active-Blocks/" class="md-nav__link">
         
   
   
@@ -2227,7 +2227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Other-Topics/Ambiguous-Methods/" class="md-nav__link">
+      <a href="../../Modpacks/Other-Topics/Ambiguous-Methods/" class="md-nav__link">
         
   
   
@@ -2255,7 +2255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Other-Topics/Central-Monitor/" class="md-nav__link">
+      <a href="../../Modpacks/Other-Topics/Central-Monitor/" class="md-nav__link">
         
   
   
@@ -2283,7 +2283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Other-Topics/Cover-Machine-Copy-Paste-Support/" class="md-nav__link">
+      <a href="../../Modpacks/Other-Topics/Cover-Machine-Copy-Paste-Support/" class="md-nav__link">
         
   
   
@@ -2311,7 +2311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Other-Topics/Custom-Coils/" class="md-nav__link">
+      <a href="../../Modpacks/Other-Topics/Custom-Coils/" class="md-nav__link">
         
   
   
@@ -2339,7 +2339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Other-Topics/Custom-Machine-Behavior/" class="md-nav__link">
+      <a href="../../Modpacks/Other-Topics/Custom-Machine-Behavior/" class="md-nav__link">
         
   
   
@@ -2367,7 +2367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Other-Topics/Custom-Machines/" class="md-nav__link">
+      <a href="../../Modpacks/Other-Topics/Custom-Machines/" class="md-nav__link">
         
   
   
@@ -2395,7 +2395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Other-Topics/Custom-Recipe-Types/" class="md-nav__link">
+      <a href="../../Modpacks/Other-Topics/Custom-Recipe-Types/" class="md-nav__link">
         
   
   
@@ -2423,7 +2423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Other-Topics/Custom-Sounds/" class="md-nav__link">
+      <a href="../../Modpacks/Other-Topics/Custom-Sounds/" class="md-nav__link">
         
   
   
@@ -2451,7 +2451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Other-Topics/LDLib-UI-Editor/" class="md-nav__link">
+      <a href="../../Modpacks/Other-Topics/LDLib-UI-Editor/" class="md-nav__link">
         
   
   
@@ -2479,7 +2479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Other-Topics/Modifying-Multiblock-Controller-UI/" class="md-nav__link">
+      <a href="../../Modpacks/Other-Topics/Modifying-Multiblock-Controller-UI/" class="md-nav__link">
         
   
   
@@ -2550,7 +2550,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Modpacks/Examples/" class="md-nav__link ">
+            <a href="../../Modpacks/Examples/" class="md-nav__link ">
               
   
   
@@ -2594,7 +2594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Examples/Custom-Recipe-Condition/" class="md-nav__link">
+      <a href="../../Modpacks/Examples/Custom-Recipe-Condition/" class="md-nav__link">
         
   
   
@@ -2622,7 +2622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Examples/Parallel-Hatch-Part/" class="md-nav__link">
+      <a href="../../Modpacks/Examples/Parallel-Hatch-Part/" class="md-nav__link">
         
   
   
@@ -2650,7 +2650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Examples/Reducing-Duration/" class="md-nav__link">
+      <a href="../../Modpacks/Examples/Reducing-Duration/" class="md-nav__link">
         
   
   
@@ -2678,7 +2678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Examples/Removing-Oil-Sprouts/" class="md-nav__link">
+      <a href="../../Modpacks/Examples/Removing-Oil-Sprouts/" class="md-nav__link">
         
   
   
@@ -2706,7 +2706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Examples/Removing-Ore-Piles/" class="md-nav__link">
+      <a href="../../Modpacks/Examples/Removing-Ore-Piles/" class="md-nav__link">
         
   
   
@@ -2798,7 +2798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Examples/Multiblocks/Example_Coil_Multiblock/" class="md-nav__link">
+      <a href="../../Modpacks/Examples/Multiblocks/Example_Coil_Multiblock/" class="md-nav__link">
         
   
   
@@ -2826,7 +2826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Examples/Multiblocks/Example_Steam_Multiblock/" class="md-nav__link">
+      <a href="../../Modpacks/Examples/Multiblocks/Example_Steam_Multiblock/" class="md-nav__link">
         
   
   
@@ -2854,7 +2854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Examples/Multiblocks/Example_Turbine/" class="md-nav__link">
+      <a href="../../Modpacks/Examples/Multiblocks/Example_Turbine/" class="md-nav__link">
         
   
   
@@ -2882,7 +2882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Examples/Multiblocks/Greenhouse/" class="md-nav__link">
+      <a href="../../Modpacks/Examples/Multiblocks/Greenhouse/" class="md-nav__link">
         
   
   
@@ -2910,7 +2910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Examples/Multiblocks/Ore-Processing-Plant/" class="md-nav__link">
+      <a href="../../Modpacks/Examples/Multiblocks/Ore-Processing-Plant/" class="md-nav__link">
         
   
   
@@ -2955,6 +2955,8 @@
   
     
     
+      
+        
       
         
       
@@ -3026,7 +3028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Changes/v1.1.0/" class="md-nav__link">
+      <a href="../../Modpacks/Changes/v1.1.0/" class="md-nav__link">
         
   
   
@@ -3054,7 +3056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Changes/v1.2.1/" class="md-nav__link">
+      <a href="../../Modpacks/Changes/v1.2.1/" class="md-nav__link">
         
   
   
@@ -3082,7 +3084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Changes/v1.6.0/" class="md-nav__link">
+      <a href="../../Modpacks/Changes/v1.6.0/" class="md-nav__link">
         
   
   
@@ -3110,7 +3112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Changes/v7.0.0/" class="md-nav__link">
+      <a href="../../Modpacks/Changes/v7.0.0/" class="md-nav__link">
         
   
   
@@ -3138,7 +3140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Changes/v7.2.0/" class="md-nav__link">
+      <a href="../../Modpacks/Changes/v7.2.0/" class="md-nav__link">
         
   
   
@@ -3166,7 +3168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Changes/v7.2.1/" class="md-nav__link">
+      <a href="../../Modpacks/Changes/v7.2.1/" class="md-nav__link">
         
   
   
@@ -3194,7 +3196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Changes/v7.3.0/" class="md-nav__link">
+      <a href="../../Modpacks/Changes/v7.3.0/" class="md-nav__link">
         
   
   
@@ -3222,7 +3224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Changes/v7.4.0/" class="md-nav__link">
+      <a href="../../Modpacks/Changes/v7.4.0/" class="md-nav__link">
         
   
   
@@ -3250,7 +3252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Modpacks/Changes/v7.5.0/" class="md-nav__link">
+      <a href="../../Modpacks/Changes/v7.5.0/" class="md-nav__link">
         
   
   
@@ -3258,6 +3260,34 @@
     
   
     Version 7.5.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modpacks/Changes/v8.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Version 8.0.0
   
 
     
@@ -3333,7 +3363,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -3377,7 +3407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Glossary/" class="md-nav__link">
+      <a href="../Glossary/" class="md-nav__link">
         
   
   
@@ -3407,7 +3437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../External-Resources/" class="md-nav__link">
+      <a href="../External-Resources/" class="md-nav__link">
         
   
   
@@ -3437,7 +3467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../FAQ/" class="md-nav__link">
+      <a href="../FAQ/" class="md-nav__link">
         
   
   
@@ -3536,7 +3566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../General-Topics/Energy-Fluid-Item-Storage/" class="md-nav__link">
+      <a href="../General-Topics/Energy-Fluid-Item-Storage/" class="md-nav__link">
         
   
   
@@ -3564,7 +3594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../General-Topics/Global-Data/" class="md-nav__link">
+      <a href="../General-Topics/Global-Data/" class="md-nav__link">
         
   
   
@@ -3592,7 +3622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../General-Topics/Optimization/" class="md-nav__link">
+      <a href="../General-Topics/Optimization/" class="md-nav__link">
         
   
   
@@ -3620,7 +3650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../General-Topics/Ore-Generation/" class="md-nav__link">
+      <a href="../General-Topics/Ore-Generation/" class="md-nav__link">
         
   
   
@@ -3648,7 +3678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../General-Topics/Overclocking-And-Parallel-Logic/" class="md-nav__link">
+      <a href="../General-Topics/Overclocking-And-Parallel-Logic/" class="md-nav__link">
         
   
   
@@ -3676,7 +3706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../General-Topics/Tick-Updates/" class="md-nav__link">
+      <a href="../General-Topics/Tick-Updates/" class="md-nav__link">
         
   
   
@@ -3684,6 +3714,176 @@
     
   
     Tick Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Sync System
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Sync System
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Annotations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Annotations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Migrating-From-LDLib-SyncData/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migrating from LDLib SyncData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
   
 
     
@@ -3738,10 +3938,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
         
           
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
             
   
   
@@ -3759,8 +3959,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3777,7 +3977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Recipe-Logic/Recipe-Logic/" class="md-nav__link">
+      <a href="../Recipe-Logic/Recipe-Logic/" class="md-nav__link">
         
   
   
@@ -3805,7 +4005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Recipe-Logic/Recipe-Searching/" class="md-nav__link">
+      <a href="../Recipe-Logic/Recipe-Searching/" class="md-nav__link">
         
   
   
@@ -3833,7 +4033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Recipe-Logic/Recipe-Execution/" class="md-nav__link">
+      <a href="../Recipe-Logic/Recipe-Execution/" class="md-nav__link">
         
   
   
@@ -3861,7 +4061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Recipe-Logic/Custom-Ingredient/" class="md-nav__link">
+      <a href="../Recipe-Logic/Custom-Ingredient/" class="md-nav__link">
         
   
   
@@ -3877,312 +4077,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SyncData
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_7" id="__nav_4_7_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_7">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    SyncData
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Using-SyncData/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Using SyncData
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_4_7_3" id="__nav_4_7_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Annotations
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_7_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Annotations
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    @Persisted
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../DescSynced/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    @DescSynced
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../RequireRerender/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    @RequireRerender
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../UpdateListener/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    @UpdateListener
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -4242,14 +4136,20 @@
     
       
     
-    <a href="https://github.com/GregTechCEu/GregTech-Modern/raw/1.20.1/docs/content/Development/SyncData/Annotations/Persisted.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/GregTechCEu/GregTech-Modern/raw/1.20.1/docs/content/Development/Data-Sync-System/index.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="using-persisted">Using <code>@Persisted</code></h1>
+<h1 id="data-syncsave-system">Data Sync/Save System</h1>
+<p>For serialising data to saves and synchronising with clients, a custom data sync system based on Java Annotations is used.</p>
+<ul>
+<li>See <a href="Usage/">Usage</a> for a guide on using the system</li>
+<li>See <a href="Annotations/">Annotations</a> for a list of annotations provided by the system</li>
+<li>See <a href="Migrating-From-LDLib-SyncData/">Migrating From LDLib SyncData</a> for instructions on how to migrate from the LDLib SyncData system, which was used in versions 7.x and lower.</li>
+</ul>
 
 
 
@@ -4357,10 +4257,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.sections", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "toc.follow", "content.code.annotate", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "toc.follow", "content.code.annotate", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
