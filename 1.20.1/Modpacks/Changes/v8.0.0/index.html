@@ -3482,23 +3482,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#new-system-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        New System Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="New System Example">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#important-migration-note" class="md-nav__link">
     <span class="md-ellipsis">
@@ -3756,6 +3739,8 @@
       
         
       
+        
+      
     
     
     
@@ -3844,6 +3829,34 @@
     
   
     Global Caches / Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Development/General-Topics/Machine-Trait-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Trait System
   
 
     
@@ -4475,23 +4488,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#new-system-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        New System Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="New System Example">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#important-migration-note" class="md-nav__link">
     <span class="md-ellipsis">
@@ -4614,6 +4610,7 @@ A number of methods have been renamed across a number of different interfaces an
 Machine interactions have been split into two methods: <code>MetaMachine::onUse</code> and <code>MetaMachine::onUseWithItem</code>.</p>
 <h2 id="machine-refactor-part-2-new-machine-trait-system">Machine Refactor Part 2: New Machine Trait System</h2>
 <p>A new system for attaching traits and custom behaviour to machines has been added, and many machine interfaces and traits now use this new system.</p>
+<p>See <a href="../../../Development/General-Topics/Machine-Trait-System/">this page</a> for an overview of the new system.</p>
 <h3 id="machine-constructor-and-trait-initialisation-changes">Machine constructor and trait initialisation changes</h3>
 <p>The constructors for a large number of machines have changed in order to simply machine instance creation. Additionally, methods for trait creation have also been removed and now form part of the machine constructor.</p>
 <h4 id="all-machines"><strong>All Machines</strong></h4>
@@ -4645,7 +4642,6 @@ Machine interactions have been split into two methods: <code>MetaMachine::onUse<
 <li>Removed <code>createRecipeLogic</code> method</li>
 <li>Constructor now has an optional <code>Supplier&lt;RecipeLogic&gt;</code> argument, defaults to the standard <code>RecipeLogic</code> class</li>
 </ul>
-<h3 id="new-system-example">New System Example</h3>
 <h4 id="important-migration-note">IMPORTANT MIGRATION NOTE:</h4>
 <p>Traits must be attached to a machine directly by calling <code>attachTrait(MachineTrait trait)</code> on the trait being attached. 
 Previously, all machine traits were constructed with the machine as the first argument.
@@ -4656,40 +4652,6 @@ Previously, all machine traits were constructed with the machine as the first ar
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">this</span><span class="p">.</span><span class="na">itemHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attachTrait</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">NotifiableItemStackHandler</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">IO</span><span class="p">.</span><span class="na">BOTH</span><span class="p">))</span>
 </code></pre></div>
 When migrating, remove the <code>this</code> argument from the machine trait constructor and instead attach the trait.</p>
-<p>Example of the new <code>AutoOutputTrait</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CustomDrumMachine</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">MetaMachine</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="kd">protected</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">NotifiableFluidTank</span><span class="w"> </span><span class="n">tank</span><span class="p">;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">AutoOutputTrait</span><span class="w"> </span><span class="n">autoOutput</span><span class="p">;</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">DrumMachine</span><span class="p">(</span><span class="n">BlockEntityCreationInfo</span><span class="w"> </span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">capacity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="kd">super</span><span class="p">(</span><span class="n">info</span><span class="p">);</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="c1">// Traits must be attached in the constructor.</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">tank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attachTrait</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">NotifiableFluidTank</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">capacity</span><span class="p">,</span><span class="w"> </span><span class="n">IO</span><span class="p">.</span><span class="na">BOTH</span><span class="p">));</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="c1">// Registers an auto output trait that provides fluid output behaviour for the given fluid tank.</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">autoOutput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attachTrait</span><span class="p">(</span><span class="n">AutoOutputTrait</span><span class="p">.</span><span class="na">ofFluids</span><span class="p">(</span><span class="n">tank</span><span class="p">));</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="n">autoOutput</span><span class="p">.</span><span class="na">setFluidOutputDirection</span><span class="p">(</span><span class="n">Direction</span><span class="p">.</span><span class="na">DOWN</span><span class="p">);</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="n">autoOutput</span><span class="p">.</span><span class="na">setFluidOutputDirectionValidator</span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Direction</span><span class="p">.</span><span class="na">DOWN</span><span class="p">);</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">  </span><span class="c1">// Any code can query traits from a machine </span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">queryTraits</span><span class="p">(</span><span class="n">MetaMachine</span><span class="w"> </span><span class="n">machine</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">      </span><span class="c1">// Returns a trait with the given type, or null.</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">      </span><span class="n">AutoOutputTrait</span><span class="w"> </span><span class="n">autoOutputTrait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">machine</span><span class="p">.</span><span class="na">getTraitHolder</span><span class="p">().</span><span class="na">getTrait</span><span class="p">(</span><span class="n">AutoOutputTrait</span><span class="p">.</span><span class="na">TYPE</span><span class="p">);</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">      </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">RecipeLogic</span><span class="o">&gt;</span><span class="w"> </span><span class="n">recipeLogicOptional</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">machine</span><span class="p">.</span><span class="na">getTraitHolder</span><span class="p">().</span><span class="na">getTrait</span><span class="p">(</span><span class="n">RecipeLogic</span><span class="p">.</span><span class="na">TYPE</span><span class="p">);</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">      </span><span class="c1">// Gets all traits with the specified type.</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">      </span><span class="n">List</span><span class="o">&lt;</span><span class="n">NotifiableItemStackHandler</span><span class="o">&gt;</span><span class="w"> </span><span class="n">allItemStackHandlers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">machine</span><span class="p">.</span><span class="na">getTraitHolder</span><span class="p">().</span><span class="na">getTraits</span><span class="p">(</span><span class="n">NotifiableItemStackHandler</span><span class="p">.</span><span class="na">TYPE</span><span class="p">);</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="p">}</span>
-</code></pre></div>
 <h3 id="removed-interfaces">Removed interfaces</h3>
 <p>A large number of machine feature interfaces have been removed, and have had their functionality merged into the standard MetaMachine class, or now use the new machine trait system:</p>
 <ul>

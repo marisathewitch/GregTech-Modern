@@ -3513,6 +3513,8 @@
       
         
       
+        
+      
     
     
     
@@ -3694,17 +3696,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#rate-limited-proxies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rate-Limited proxies
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3734,6 +3725,34 @@
     
   
     Global Caches / Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine-Trait-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Trait System
   
 
     
@@ -4320,17 +4339,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#rate-limited-proxies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rate-Limited proxies
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -4367,8 +4375,7 @@
 <h1 id="how-to-add-an-item-inventory-fluid-storage-energy-container">How to add an Item Inventory / Fluid Storage / Energy Container</h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In general, these containers should be created as <code>final</code> fields (that's what we need for the
-<a href="../SyncData/index.md">SyncData</a> system).<br />
+<p>In general, these containers should be created as <code>final</code> fields.<br />
 Set their base arguments in the constructor (you can pass args for subclasses to modify).</p>
 </div>
 <h2 id="implementations-for-recipe-processing-and-adding-capabilities">Implementations for Recipe Processing and adding Capabilities</h2>
@@ -4416,59 +4423,6 @@ They generally act as a proxy to the underlying container(s), while also handlin
 <li><code>IOItemTransferList</code></li>
 <li><code>IOFluidTransferList</code>  </li>
 </ul>
-<h3 id="rate-limited-proxies">Rate-Limited proxies</h3>
-<div class="admonition warning inline end">
-<p class="admonition-title">Not merged yet<br><em>Branch: <code>mi-ender-link</code></em></p>
-</div>
-<p>If you need to proxy any item or fluid container that needs to be rate limited for insertion and extraction, you can
-use either of the following classes:</p>
-<ul>
-<li><code>LimitingItemTransferProxy</code></li>
-<li><code>LimitingFluidTransferProxy</code></li>
-</ul>
-<p>The transfer limit passed as a constructor parameter will not renew automatically. Your container will therefore stop
-transferring anything once this limit is reached.</p>
-<p>If you want to make this a rate limit instead, you will have to schedule a task that regularly resets the transfer
-limit to the maximum value for your task's interval:</p>
-<details class="example">
-<summary>Example Usage</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyCover</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">CoverBehavior</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">LimitingFluidTransferProxy</span><span class="w"> </span><span class="n">transferProxy</span><span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ConditionalSubscriptionHandler</span><span class="w"> </span><span class="n">rateLimitSubscription</span><span class="p">;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MyCover</span><span class="p">(</span><span class="n">IFluidTransfer</span><span class="w"> </span><span class="n">myFluidTransfer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">);</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="n">transferProxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LimitingFluidTransferProxy</span><span class="p">(</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">                </span><span class="n">myFluidTransfer</span><span class="p">,</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">                </span><span class="mi">0</span><span class="n">L</span><span class="w"> </span><span class="c1">// Initial limit of 0, will be updated regularly in isRateLimitRefreshActive()</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="p">);</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="n">rateLimitSubscription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConditionalSubscriptionHandler</span><span class="p">(</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">                </span><span class="k">this</span><span class="p">,</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">                </span><span class="k">this</span><span class="p">::</span><span class="n">resetTransferRateLimit</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">                </span><span class="k">this</span><span class="p">::</span><span class="n">isRateLimitRefreshActive</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="p">);</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nd">@Override</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onLoad</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onLoad</span><span class="p">();</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="n">rateLimitSubscription</span><span class="p">.</span><span class="na">initialize</span><span class="p">(</span><span class="n">coverHolder</span><span class="p">.</span><span class="na">getLevel</span><span class="p">());</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">resetTransferRateLimit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">transferProxy</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">            </span><span class="k">return</span><span class="p">;</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="n">transferProxy</span><span class="p">.</span><span class="na">setRemainingTransfer</span><span class="p">(</span><span class="n">transferRate</span><span class="p">.</span><span class="na">getMilliBuckets</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isRateLimitRefreshActive</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="c1">// ...</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="p">}</span>
-</code></pre></div>
-</details>
 
 
 
