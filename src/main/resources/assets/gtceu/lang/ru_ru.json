@@ -6045,5 +6045,10 @@
     "symptom.gtceu.slowness": "Замедление",
     "symptom.gtceu.weak_poisoning": "Слабое отравление",
     "symptom.gtceu.weakness": "Слабость",
-    "symptom.gtceu.wither": "Некроз"
+    "symptom.gtceu.wither": "Некроз",
+    "bedrock_fluid.gtceu.heavy_oil_deposit": "Залежь тяжелой нефти",
+    "bedrock_fluid.gtceu.lava_deposit": "Залежь лавы",
+    "bedrock_fluid.gtceu.light_oil_deposit": "Залежь легкой нефти",
+    "bedrock_fluid.gtceu.natural_gas_deposit": "Залежь природного газа",
+    "bedrock_fluid.gtceu.nether_natural_gas_deposit": "Залежь природного газа Нижнего мира"
 }
