@@ -6188,5 +6188,10 @@
     "gtceu.multiblock.large_combustion_engine.no_lubricant": "Машине требуется Смазка для работы",
     "gtceu.tooltip.location_slot": "Слот: %s",
     "item.gtceu.composite_fluid_filter": "Композитный жидкостный фильтр",
-    "item.gtceu.composite_item_filter": "Композитный предметный фильтр"
+    "item.gtceu.composite_item_filter": "Композитный предметный фильтр",
+    "gtceu.tooltip.spoils_into": "Портится в: %s",
+    "gtceu.tooltip.spoil_time_total": "Общее время до порчи: %s",
+    "gtceu.tooltip.spoil_time_remaining": "До порчи: %s",
+    "gtceu.tooltip.location_entity": "Энтити: %s",
+    "gtceu.tooltip.location": "Локация: %s (%d, %d, %d)"
 }
