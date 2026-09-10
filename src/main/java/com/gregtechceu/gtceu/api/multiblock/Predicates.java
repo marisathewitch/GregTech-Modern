@@ -22,7 +22,6 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.common.data.GTMaterialBlocks;
 import com.gregtechceu.gtceu.config.ConfigHolder;
 
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -50,7 +49,7 @@ public class Predicates {
      * Return this for your pattern errors if you want them to be a default error with the pos of the BlockWorldState
      * and candidates of the simple predicate's error.
      */
-    public static final PlaceholderError PLACEHOLDER = new PlaceholderError(BlockPos.ZERO, Collections.emptyList());
+    public static final PlaceholderError PLACEHOLDER = PlaceholderError.instance();
 
     public static MultiPredicate controller(MultiblockMachineDefinition def) {
         return blocks(def.getBlock()).setController(true);
@@ -100,6 +99,17 @@ public class Predicates {
 
     public static MultiPredicate blocks(Block... blocks) {
         return blocks(null, blocks);
+    }
+
+    @HideFromJS
+    public static MultiPredicate blocks(Supplier<Block> block) {
+        return blocks(block.get());
+    }
+
+    @SafeVarargs
+    @HideFromJS
+    public static MultiPredicate blocks(Supplier<Block>... blocks) {
+        return blocks(Arrays.stream(blocks).map(Supplier::get).toArray(Block[]::new));
     }
 
     @RemapForJS("blocksDebug")
