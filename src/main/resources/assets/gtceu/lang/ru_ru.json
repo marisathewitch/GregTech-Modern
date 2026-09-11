@@ -1961,12 +1961,12 @@
     "gtceu.multiblock.large_combustion_engine.boost_disallowed": "§bУлучшите выходной разъем, чтобы включить Форсаж.",
     "gtceu.multiblock.large_combustion_engine.description": "Большой дизельный генератор - представляет собой многоблочную структуру, которая действует как дизельный генератор, но EV напряжения.",
     "gtceu.multiblock.large_combustion_engine.liquid_oxygen_amount": "Кол-во жид. кислорода: %sЛ",
-    "gtceu.multiblock.large_combustion_engine.liquid_oxygen_boosted": "§bЖидкий кислород добавлен.",
+    "gtceu.multiblock.large_combustion_engine.liquid_oxygen_boosted": "§9Жидкий кислород добавлен.",
     "gtceu.multiblock.large_combustion_engine.lubricant_amount": "Кол-во смазки: %sЛ",
     "gtceu.multiblock.large_combustion_engine.obstructed": "Что-то мешает воздухозаборнику двигателя.",
     "gtceu.multiblock.large_combustion_engine.oxygen_amount": "Кол-во кислорода: %sЛ",
     "gtceu.multiblock.large_combustion_engine.oxygen_boosted": "§bКислород добавлен.",
-    "gtceu.multiblock.large_combustion_engine.supply_liquid_oxygen_to_boost": "Принимает жидкий кислород для ускорения.",
+    "gtceu.multiblock.large_combustion_engine.supply_liquid_oxygen_to_boost": "Принимает §9Жидкий кислород§7 для ускорения.",
     "gtceu.multiblock.large_combustion_engine.supply_oxygen_to_boost": "Принимает кислород для ускорения.",
     "gtceu.multiblock.large_miner.done": "Готово!",
     "gtceu.multiblock.large_miner.errorradius": "§cНевозможно изменить радиус во время работы!",
@@ -6125,5 +6125,6 @@
     "gtceu.tooltip.item_handler_data": "",
     "gtceu.tooltip.item_handler_source": "",
     "item.gtceu.tool.lv_buzzsaw": "",
-    "material.gtceu.null": ""
+    "material.gtceu.null": "",
+    "gtceu.multiblock.large_combustion_engine.no_lubricant": "Машине требуется Смазка для работы"
 }
