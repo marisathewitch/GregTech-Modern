@@ -6208,5 +6208,21 @@
     "item.gtceu.spoilable_4": "Скоропортящийся 4",
     "item.gtceu.spoilable_5": "Скоропортящийся 5",
     "material.gtceu.null": "Null",
-    "gtceu.multiblock.large_combustion_engine.output": "Производит %s EU/т"
+    "gtceu.multiblock.large_combustion_engine.output": "Производит %s EU/т",
+    "armor.gtceu.jetpack.flight.disabled": "Двигатель: полёт отключен",
+    "armor.gtceu.jetpack.flight.enabled": "Двигатель: полёт включен",
+    "armor.gtceu.jetpack.hover.disabled": "Двигатель: режим парения отключен",
+    "armor.gtceu.jetpack.hover.enabled": "Двигатель: режим парения включен",
+    "armor.gtceu.night_vision.disabled": "§bНочное зрение: §aВыкл",
+    "behaviour.charger_linked": "Зарядное устройство привязано",
+    "block.gtceu.equipment_foundry": "Мастерская снаряжения",
+    "block.gtceu.ev_spooler": "§5Улучшенный намоточный станок III§r",
+    "block.gtceu.ev_welder": "§5Улучшенный сварочный аппарат III§r",
+    "block.gtceu.hv_spooler": "§6Улучшенный намоточный станок II§r",
+    "block.gtceu.hv_welder": "§6Улучшенный сварочный аппарат II§r",
+    "block.gtceu.iv_spooler": "§9Превосходный намоточный станок §r",
+    "block.gtceu.iv_welder": "§9Превосходный сварочный аппарат §r",
+    "block.gtceu.large_spooler": "Большой намоточный станок",
+    "block.gtceu.large_welder": "Большой сварочный аппарат",
+    "block.gtceu.luv_spooler": "§dПревосходный намоточный станок II§r"
 }
